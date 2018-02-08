@@ -46,11 +46,6 @@ function before(xhr){
 function complete(xhr){
   progressBar.increase(60);
 }
-export default {
-  install(Vue){
-    Vue.prototype.$ajax = ajax
-  }
-}
 $(function(){
   var options = {
     id: 'top-progress-bar',
@@ -60,3 +55,9 @@ $(function(){
   }
   progressBar = new ToProgress(options);
 })
+
+export default {
+  install(Vue){
+    Vue.prototype.$ajax = ajax
+  }
+}
