@@ -9,6 +9,7 @@
     name: "test",
     methods: {
       test() {
+        this.$message({message:'fk',type:'success'});
         this.$ajax("/admin/menu/list",function (flag,res) {
           console.log(flag);
           console.log(res);
@@ -22,6 +23,5 @@
 .dd{
   width: 100%;
   height: 40px;
-  background: #000;
 }
 </style>

@@ -1,15 +1,25 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-Vue.use(Router)
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
 import TestAjax from '../view/test/TestAjax'
 import TestStore from '../view/test/TestStore'
+import Main from '../components/components/main/MainBody'
 
 
-
-let router = new Router({
+let router = new VueRouter({
   routes: [
-    {path: '/ajax',name: 'test',component: TestAjax},
-    {path: '/store',name: 'test',component: TestStore},
+    {path: '/main',name: 'main',component: TestAjax},
+    {
+      path: '/auth',
+      name: 'main-content',
+      component:Main,
+      children:[
+        {path: '/auth/ajax',name: 'test',component: TestAjax, hidden: false },
+        {path: '/auth/store',name: 'store',component: TestStore, hidden: false },
+      ]
+    },
+
+
   ]
 })
 

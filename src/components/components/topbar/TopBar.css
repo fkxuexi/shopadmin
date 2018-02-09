@@ -1,0 +1,131 @@
+.link {
+  color: #fff;
+}
+.top-bar{
+  height: 60px;
+  background: #23262E;
+  line-height: 60px;
+  position: relative;
+}
+/*品牌 logo的设置区域*/
+.top-bar .brand{
+  height: 60px;
+  width: 300px;
+  line-height: 60px;
+  overflow: hidden;
+  font-size: 20px;
+  font-family: Arial, "Microsoft YaHei";
+  float: left;
+}
+.top-bar .brand:hover{
+  color: #777;
+}
+.top-bar .brand i{
+  color: #1AA094;
+  margin-left: 30px;
+  margin-right: 4px;
+}
+/*品牌 logo设置结束*/
+
+/*右边选项按钮*/
+.top-bar .top-menu{
+  height: 60px;
+  line-height: 60px;
+  position: absolute;
+  right: 0;
+  font-size: 14px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.top-bar .top-menu li{
+  position: relative;
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 0px 20px;
+}
+.top-bar .top-menu li .link{
+  height: 60px;
+  display: inline-block;
+}
+.top-bar .top-menu .user-item:hover{
+
+}
+.top-bar .top-menu .user-item .link .user{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+  margin-right: 8px;
+  float: left;
+  border-radius: 50%;
+}
+.top-bar .top-menu .user-item:after{
+  clear: both;
+}
+.top-bar .top-menu .user-item .link i{
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  display: inline-block;
+  margin-left: 4px;
+  margin-top: -40px;
+}
+.top-menu .user-item .user-dialog{
+  position:absolute;
+  top: 63px;
+  z-index: 9999;
+  min-width: 85%;
+  right: 12px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: #FFF;
+  border: 1px solid #d2d2d2;
+  box-shadow: 0 2px 4px rgba(0,0,0,.12);
+  padding: 5px 0;
+  font-size: 14px;
+}
+.top-menu .user-item .user-dialog:after{
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  opacity: 1.0;
+  top: -9px;
+  right: 5px;
+  border-bottom: 9px solid #fff;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  box-sizing: border-box;
+}
+.top-menu dl dd{
+  height: 30px;
+  line-height: 30px;
+}
+.top-menu dl dd .item{
+  color: #000;
+  margin: 4px 15px;
+  width: 100%;
+}
+.top-menu dl dd:hover{
+  background: #5fb878;
+}
+.top-menu dl dd .item i{
+  margin-right: 8px;
+  font-size: 14px;
+}
+slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active for below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}

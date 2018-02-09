@@ -1,0 +1,32 @@
+nav {
+  height: 39px;
+  width: 100%;
+  border-bottom: 1px solid #e2e2e2;
+  box-shadow: 2px 2px 4px rgba(57, 61, 73, .12);
+}
+
+.nav-item {
+  float: left;
+  width: 120px;
+  height: 39px;
+  line-height: 39px;
+  font-size: 14px;
+  text-align: center;
+  border-right: 1px solid #e2e2e2;
+}
+
+.nav-item .fa-close:hover {
+  color: red;
+}
+
+.nav-item .link {
+  color: #000;
+}
+
+.current {
+  background: #1AA094;
+}
+
+.current .link {
+  color: #fff;
+}

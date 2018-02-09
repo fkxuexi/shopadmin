@@ -9,7 +9,8 @@ Vue.use(Vuex)
 const state = {
   crumbs: [
     {name:'首页',url:'/admin/list'}
-  ]
+  ],
+  user:'欢迎 fkxuexi'
 }
 
 

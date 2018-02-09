@@ -1,0 +1,41 @@
+<template>
+  <transition name="message-fade">
+    <div class="message" v-show="show">
+      <span class="icon"><icon name="info"></icon></span>
+      <p>{{message}}</p>
+    </div>
+  </transition>
+</template>
+
+<script>
+  export default {
+    name: 'msg',
+    mounted(){
+      this.StartTime();
+    },
+    data(){
+      return {
+        message: '123',
+        show: false,
+        timer: null
+      }
+    },
+    methods:{
+      StartTime(){
+        this.show = true;
+        if(this.timer){
+          clearTimeout(this.timer)
+        }else{
+          this.timer = setTimeout(()=>{
+            this.show = false
+          }, 3000);
+        }
+      }
+    }
+  }
+</script>
+
+
+<style scoped>
+
+</style>
