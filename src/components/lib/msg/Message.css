@@ -1,0 +1,39 @@
+.message{
+  min-width: 200px;
+  height: 40px;
+  background: #fff;
+  margin: 30px auto 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,.3),
+  0 0 6px rgba(0,0,0,.04);
+  position: fixed;
+  top: 130px;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+}
+.message span{
+  float: left;
+  line-height: 40px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+  color: #fff;
+}
+.message .info{
+  background: #50BFCD;
+}
+.message .warn{
+  background: #F7BA2A;
+}
+.message .success{
+  background: #13CE66;
+}
+.message .error{
+  background: #FF4949;
+}
+
+.message p{
+  height: 40px;
+  line-height: 40px;
+}

@@ -6,12 +6,18 @@
       </ul>
     <button class="button" @click="testPutCrumbs">试试呀，试试就试试</button>
     <button class="button" @click="testSubCrumbs">试试呀，试试就试试</button>
+    <sk-dialog :show="true"></sk-dialog>
   </div>
+
 </template>
 
 <script>
   import { mapState, mapActions } from 'vuex'
+  import SkDialog from '../../components/lib/dialog/Dialog'
     export default {
+        components:{
+          SkDialog,
+        },
         name: "test-store",
         computed:mapState([
           'crumbs'

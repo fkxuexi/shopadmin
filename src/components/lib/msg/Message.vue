@@ -1,7 +1,9 @@
 <template>
-  <transition name="message-fade">
-    <div class="message" v-show="show">
-      <span class="icon"><icon name="info"></icon></span>
+  <transition  name="custom-classes-transition"
+               enter-active-class="animated bounceInDown"
+               leave-active-class="animated bounceOutUp">
+    <div class="message" v-show="show" :style="{width:width}">
+      <span :class="[icon,'icon',type]"></span>
       <p>{{message}}</p>
     </div>
   </transition>
@@ -10,26 +12,37 @@
 <script>
   export default {
     name: 'msg',
-    mounted(){
+    mounted() {
       this.StartTime();
     },
-    data(){
+    data() {
       return {
         message: '123',
         show: false,
-        timer: null
+        duration: 0,
+        icon:'',
+        type:'',
+        width:'300px',
       }
     },
-    methods:{
-      StartTime(){
+    methods: {
+      StartTime() {
         this.show = true;
-        if(this.timer){
-          clearTimeout(this.timer)
-        }else{
-          this.timer = setTimeout(()=>{
-            this.show = false
-          }, 3000);
+        this.duration = setTimeout(() => {
+          this.destory();
+        }, this.duration);
+      },
+      destory() {
+        this.show = false;
+        var children = document.body.children;
+        for (let index in children) {
+          if (children[index].className == 'message') {
+            document.body.removeChild(children[index]);
+          }
         }
+        clearTimeout(this.duration)
+
+        this.duration = null;
       }
     }
   }
@@ -37,5 +50,5 @@
 
 
 <style scoped>
-
+@import "Message.css";
 </style>

@@ -41,7 +41,6 @@
             </dl>
           </transition>
         </router-link>
-
       </li>
     </ul>
   </div>

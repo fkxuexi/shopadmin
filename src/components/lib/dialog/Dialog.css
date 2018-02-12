@@ -1,0 +1,25 @@
+.dialog{
+  position: relative;
+  width: 500px;
+  height: 400px;
+  top: 20%;
+  background: #FFFFFF;
+  margin: 0 auto;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.3);
+  z-index: 8888;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  z-index: 101;
+}
+.bgm{
+  position:fixed;
+  width: 100%;
+  height: 100%;
+  left:0;
+  top:0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 100;
+}
