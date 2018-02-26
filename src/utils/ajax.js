@@ -1,8 +1,7 @@
+// var base = "https://www.goldbangs.com/cms/";
+var base = "http://localhost/cms/";
 import TopProgressBar from '../components/lib/topProgress/ToProgress.min'
-var base = "https://www.goldbangs.com/cms/";
-var progressBar
-
-
+var process ;
 function ajax(url,param,callback){
   url = base + url;
   if (typeof(param) == 'function'){
@@ -20,12 +19,19 @@ function ajax(url,param,callback){
         before(xhr);
       },
       success:function (res) {
-        progressBar.finish();
         callback(true,res);
+        process.increase(80)
+        setTimeout(function(){
+          process.finish();
+          callback(false);
+        },500)
       },
       error:function (xhr,error,e) {
-        progressBar.finish();
-        callback(false);
+        process.increase(80)
+        setTimeout(function(){
+          process.finish();
+          callback(false);
+        },500)
       }
   })
 }
@@ -36,7 +42,10 @@ function ajax(url,param,callback){
  * @param xhr
  */
 function before(xhr){
-  progressBar.increase(20);
+ if (!process){
+   getProcess();
+ }
+  process.increase(20);
 }
 
 /**
@@ -44,17 +53,18 @@ function before(xhr){
  * @param xhr
  */
 function complete(xhr){
-  progressBar.increase(60);
+  process.increase(60);
 }
-$(function(){
-  var options = {
+function getProcess(){
+  var options =  {
     id: 'top-progress-bar',
     color: '#409eff',
     height: '2px',
     duration: 0.4
-  }
-  progressBar = new ToProgress(options);
-})
+  };
+  process = new ToProgress(options);
+  return process;
+}
 
 export default {
   install(Vue){

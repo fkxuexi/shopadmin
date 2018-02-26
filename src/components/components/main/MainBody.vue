@@ -2,7 +2,7 @@
   <div class="body-warp">
     <top-bar :user="user"></top-bar>
     <div class="body-content">
-      <div class="menu" :style="{height:height+'px'}"></div>
+      <menus class="menu" :style="{height:height+'px'}"></menus>
       <sk-row>
         <sk-col :span="12">
           <nav-bar></nav-bar>
@@ -22,12 +22,13 @@
   import NavBar from '../navbar/NavBar'
   import SkRow from '../../lib/layout/Row'
   import SkCol from '../../lib/layout/Col'
+  import Menus from '../menu/Menu'
   import {mapState, mapActions} from 'vuex'
 
   export default {
     name: "main-body",
     components: {
-      TopBar, NavBar, SkRow, SkCol,
+      TopBar, NavBar, SkRow, SkCol,Menus
     },
     computed: mapState([
       'user'
