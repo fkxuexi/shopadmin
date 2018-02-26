@@ -21,3 +21,6 @@
 - 图标：http://fontawesome.dashgame.com/
 - 动画：https://daneden.github.io/animate.css/
 
+### 待完成：
+[x] 菜单的样式的编写
+[x] 弹出框的样式的编写 
