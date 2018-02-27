@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
+import Main from '../components/components/main/MainBody'
 import TestAjax from '../view/test/TestAjax'
 import TestStore from '../view/test/TestStore'
-import Main from '../components/components/main/MainBody'
+import ActivityRule from '../view/activity/ActivityRule'
 
 
 let router = new VueRouter({
@@ -15,7 +16,7 @@ let router = new VueRouter({
       component:Main,
       children:[
         {path: '/auth/ajax',name: 'test',component: TestAjax, hidden: false },
-        {path: '/auth/store',name: 'store',component: TestStore, hidden: false },
+        {path: '/auth/store',name: 'store',component: ActivityRule, hidden: false },
       ]
     },
 

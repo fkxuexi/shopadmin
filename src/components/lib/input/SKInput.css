@@ -1,0 +1,31 @@
+.sk-input{
+  width: 160px;
+  border: 1px solid red;
+  border-radius: 4px;
+  line-height: 30px;
+  height: 30px;
+}
+span{
+  padding-left: 8px;
+  padding-right: 4px;
+  line-height: 30px;
+  height: 30px;
+  display: inline-table;
+}
+
+input{
+  margin: 0;
+  padding: 0;
+  border: none;
+  line-height: 30px;
+  width: 100px;
+  height: 100%;
+  display:inline-block;
+  vertical-align: middle;
+  border: 0;
+  outline: none;
+}
+input:hover,input:active,input:visited,input:focus{
+  border: 0;
+  outline:none;
+}

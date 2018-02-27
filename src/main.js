@@ -2,10 +2,13 @@ import Vue from 'vue'
 import store from './utils/storage/store'
 import App from './App'
 import router from './utils/routers'
+import component from './utils/component'
+
 
 import 'bulma/css/bulma.css'
 import 'font-awesome/css/font-awesome.min.css'
 import 'animate.css'
+import '../static/common.css'
 
 Vue.config.productionTip = false
 

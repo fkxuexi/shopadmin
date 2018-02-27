@@ -1,0 +1,21 @@
+.search-area{
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  transition: .2s;
+  box-shadow: 0 0 8px 0 rgba(232,237,250,.6),
+              0 2px 4px 0 rgba(232,237,250,.5);
+}
+fieldset{
+  margin: 4px 6px 6px 6px;
+}
+.title{
+  font-size: 14px;
+  margin-bottom: 0;
+  font-size: 14px;
+  text-align: center;
+}
+.search{
+  margin-bottom: 6px;
+  margin-left: 8px;
+  margin-right: 8px;
+}

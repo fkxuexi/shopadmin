@@ -48,8 +48,8 @@
               'border-top':'1px dotted #E4E4E4'
             })
             $(subLi[0]).css({
-              'border-top':'none',
-              'border-top':'1px solid #E4E4E4'
+              /*'border-top':'none',
+              'border-top':'1px solid #E4E4E4'*/
             })
           }
       }
