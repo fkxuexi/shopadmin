@@ -1,12 +1,14 @@
 <template>
   <div>
      <router-link :to="{path:menuItem.menuUrl}">
-       <li :class="[level,'menuItem',index == currentIndex ? 'current':'']" :style="identation" @click.stop="toggle($event,index)">
-         <i :class="[menuItem.menuIconClass,'fa fa-user fa-fw','preffix']"></i>
-         {{menuItem.menuName}}-{{level}}
-         <i v-if="menuItem.menuUrl==''" :class="[menuItem.menuIconClass,'fa fa-angle-down fa-fw','fr','suffix']"></i>
+       <li @click.stop="toggle($event,index)">
+        <div class="menuItem" :style="identation">
+          <i :class="[menuItem.menuIconClass,'fa fa-user fa-fw','preffix']"></i>
+          {{menuItem.menuName}}-{{level}}
+          <i v-if="menuItem.menuUrl==''" :class="[menuItem.menuIconClass,'fa fa-angle-down fa-fw','fr','suffix']"></i>
+        </div>
        </li>
-       <ul v-show="open">
+       <ul v-show="open" >
          <menu-items v-for="item in menuItem.children" :menuItem="item" :key="item.id"></menu-items>
        </ul>
      </router-link>
@@ -30,12 +32,10 @@
           },
           identation:function () {
             var menuLevel = this.menuItem.menuLevelPath.split('-').length - 1;
-            if (menuLevel != 1){
               var style = {
-                'margin-left' : parseInt(menuLevel) * 12 +'px'
+                'margin-left': parseInt(menuLevel) * 12 + 'px'
               }
               return style;
-            }
           }
       },
       methods:{
@@ -43,29 +43,14 @@
             this.open = !this.open;
             this.currentIndex = index;
             var liDom =  $(event.currentTarget);
-            var parent = $(liDom).parent();
-            if (this.open ){
-                $(parent).find('li .suffix').addClass("fa-rotate-180");
-            }else{
-                $(parent).find('li .suffix').removeClass("fa-rotate-180");
-            }
-            console.log('parent',parent);
-            parent.css({'background':'#f5f5f5'})
-            var divDom = $(parent).siblings().find('div li');
-            console.log('div',divDom);
-            divDom.css({
-              'border-top':'1px dotted #E4E4E4',
-              'border-left':'1px dotted #337ab7',
-              'padding-left':'4px'
+            var subLi = $(liDom).siblings('ul').find('li');
+            $(subLi).css({
+              'border-top':'1px dotted #E4E4E4'
             })
-          /* $(divDom[0]).css({
-             'border-top':'1px solid #E4E4E4'
-           })
-            var aDom = $(divDom).find('a li');
-            aDom.css({
-              'border-left':'1px dotted #337ab7',
-              'padding-left':'4px'
-            })*/
+            $(subLi[0]).css({
+              'border-top':'none',
+              'border-top':'1px solid #E4E4E4'
+            })
           }
       }
     }

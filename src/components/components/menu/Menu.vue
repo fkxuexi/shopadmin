@@ -35,11 +35,21 @@
                       {
                         "menuId": "21",
                         "menuPath": "0-1-2-21-",
-                        "menuUrl": "/admin/admin/manage",
+                        "menuUrl": "",
                         "menuName": "第三级菜单",
                         "menuPid": "1",
                         "menuIconClass": "fa fa-user",
-                        "menuLevelPath": "0-1-2-21-"
+                        "menuLevelPath": "0-1-2-21",
+                        "children": [
+                          {
+                            "menuId": "21",
+                            "menuPath": "0-1-2-21-",
+                            "menuUrl": "/admin/admin/manage",
+                            "menuName": "第四级菜单",
+                            "menuPid": "1",
+                            "menuIconClass": "fa fa-user",
+                            "menuLevelPath": "0-1-2-21-23"
+                          }]
                       }]
                   },
                   {
